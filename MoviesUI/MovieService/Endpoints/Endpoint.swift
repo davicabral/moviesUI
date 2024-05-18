@@ -16,7 +16,7 @@ protocol Endpoint {
 extension Endpoint {
 
     var baseURL: String {
-        "https://api.themoviedb.org/3"
+        "https://api.themoviedb.org"
     }
     
     var params: [String: String] {

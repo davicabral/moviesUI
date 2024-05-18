@@ -11,7 +11,7 @@ enum GenreEndpoint: Endpoint {
     case genres
 
     var path: String {
-        "/genre/movie/list"
+        "/3/genre/movie/list"
     }
 
     

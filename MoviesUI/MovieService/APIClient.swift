@@ -21,8 +21,13 @@ class APIClient {
             fatalError("Thow some error later")
         }
         let urlSession = URLSession.shared
-        let data = try await urlSession.data(from: url).0
-        return try JSONDecoder().decode(Model.self, from: data)
+        do {
+            let data = try await urlSession.data(from: url).0
+            return try JSONDecoder().decode(Model.self, from: data)
+        } catch {
+            throw error
+        }
+
     }
 
 }
