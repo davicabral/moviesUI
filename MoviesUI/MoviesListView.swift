@@ -9,7 +9,7 @@ import SwiftUI
 
 enum ViewState<ViewData> {
     case loading
-    case error
+    case error(MoviesError)
     case loaded(ViewData)
 }
 
@@ -28,8 +28,8 @@ struct MoviesListView: View {
             case .loading:
                 ProgressView()
                   .listSectionSeparator(.hidden)
-            case .error:
-                Text("Erro happened")
+            case .error(let error):
+                Text("\(error.localizedDescription)")
             case .loaded(let genres):
                 ForEach(genres) { genre in
                     Text(genre.name)
@@ -40,8 +40,10 @@ struct MoviesListView: View {
             do {
                 let genres = try await movieGenreRepository.getMovieGenres()
                 viewState = .loaded(genres)
+            } catch let error as MoviesError {
+                viewState = .error(error)
             } catch {
-                viewState = .error
+                viewState = .error(.genericError)
             }
         }
     }

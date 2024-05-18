@@ -22,6 +22,7 @@
 		0F3C780F2BF950030040F090 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C780E2BF950030040F090 /* APIKey.swift */; };
 		0F3C78122BF952CC0040F090 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C78112BF952CC0040F090 /* Endpoint.swift */; };
 		0F3C78142BF9532B0040F090 /* GenreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C78132BF9532B0040F090 /* GenreEndpoint.swift */; };
+		0F3C78162BF957070040F090 /* MoviesError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3C78152BF957070040F090 /* MoviesError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		0F3C780E2BF950030040F090 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		0F3C78112BF952CC0040F090 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0F3C78132BF9532B0040F090 /* GenreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreEndpoint.swift; sourceTree = "<group>"; };
+		0F3C78152BF957070040F090 /* MoviesError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				0F3C78072BF944F40040F090 /* Model */,
-				0F3C78062BF942FA0040F090 /* MovieService */,
+				0F3C78152BF957070040F090 /* MoviesError.swift */,
+				0F3C78062BF942FA0040F090 /* Networking */,
 				0F3C77D82BF933770040F090 /* MoviesUIApp.swift */,
 				0F3C77DA2BF933770040F090 /* ContentView.swift */,
 				0F3C77DC2BF933770040F090 /* Item.swift */,
@@ -147,7 +150,7 @@
 			path = MoviesUIUITests;
 			sourceTree = "<group>";
 		};
-		0F3C78062BF942FA0040F090 /* MovieService */ = {
+		0F3C78062BF942FA0040F090 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				0F3C78102BF952BF0040F090 /* Endpoints */,
@@ -155,7 +158,7 @@
 				0F3C780C2BF94DBC0040F090 /* APIClient.swift */,
 				0F3C780E2BF950030040F090 /* APIKey.swift */,
 			);
-			path = MovieService;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		0F3C78072BF944F40040F090 /* Model */ = {
@@ -307,6 +310,7 @@
 			files = (
 				0F3C77DB2BF933770040F090 /* ContentView.swift in Sources */,
 				0F3C78122BF952CC0040F090 /* Endpoint.swift in Sources */,
+				0F3C78162BF957070040F090 /* MoviesError.swift in Sources */,
 				0F3C780D2BF94DBC0040F090 /* APIClient.swift in Sources */,
 				0F3C780F2BF950030040F090 /* APIKey.swift in Sources */,
 				0F3C78052BF93DB30040F090 /* MoviesListView.swift in Sources */,

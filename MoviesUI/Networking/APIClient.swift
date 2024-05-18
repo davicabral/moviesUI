@@ -12,20 +12,20 @@ class APIClient {
 
     func request<Model: Decodable>(endpoint: Endpoint) async throws -> Model {
         guard var urlComponent = URLComponents(string: endpoint.baseURL) else {
-            fatalError("Thow some error later")
+            throw MoviesError.wrongURL
         }
         urlComponent.path = endpoint.path
         urlComponent.queryItems = endpoint.params.map { URLQueryItem(name: $0, value: $1) }
 
         guard let url = urlComponent.url else {
-            fatalError("Thow some error later")
+            throw MoviesError.wrongURL
         }
         let urlSession = URLSession.shared
         do {
             let data = try await urlSession.data(from: url).0
             return try JSONDecoder().decode(Model.self, from: data)
         } catch {
-            throw error
+            throw MoviesError.fetchAndParseError
         }
 
     }
