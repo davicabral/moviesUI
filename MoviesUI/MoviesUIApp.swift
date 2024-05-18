@@ -11,7 +11,9 @@ import SwiftData
 @main
 struct MoviesUIApp: App {
 
-    @State var movieGenreRepository = MovieGenreRepository()
+    private var apiClient = APIClient()
+    @State var movieGenreRepository: MovieGenreRepository
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -32,5 +34,9 @@ struct MoviesUIApp: App {
         }
         .modelContainer(sharedModelContainer)
         .environment(movieGenreRepository)
+    }
+
+    init() {
+        self.movieGenreRepository = MovieGenreRepository(apiClient: apiClient)
     }
 }
